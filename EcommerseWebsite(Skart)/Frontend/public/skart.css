@@ -1,0 +1,383 @@
+body {
+    background-image: url("https://i.ibb.co/NZxZ1CM/top-view-accessoires-travel-concept-mobile-phone-listening-music-by-headphone-wooden-background-shoe.jpg");
+    background-color: #0099ff;	
+    font-family: 'Noto Sans Bamum', sans-serif;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .signup-form,.orderform {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 30%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .signup-form h2 {
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+
+  .form-control {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .btn {
+    background-color: #359927;
+    color: white;
+    padding: 12px 20px;
+    border-radius:25px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s ease-in-out;
+  }
+  img.avatar {
+width: 50%;
+border-radius: 20%;
+}
+
+img.failure
+{
+  width: 23%;
+border-radius: 20%;
+}
+
+.button {
+    display: block;
+    width: 115px;
+    height: 25px;
+    top:0.5px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius:25px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    display: inline;
+    text-decoration: none;
+    top:-20px;
+}
+h1 {
+  float: left;
+}
+
+
+header {
+  background-color:white;
+  position: fixed;
+  top: 0.1px;
+  height: 80px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+header * {
+  display: inline;
+}
+
+header li {
+  right:0;
+  margin: 10px;
+  float: left;
+}
+
+li .router {
+  transition: all 0.2s ease-in-out;
+}
+
+
+li .router:hover {
+  background-color: #111;
+  color: white;
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+.router {
+color: black;
+display: block;
+color: black;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+border-radius: 8px;
+}
+
+.content{
+top :1px;
+background-color:white;
+width:30%;
+height:30%;
+margin:15px;
+box-sizing :border -box;
+float :left;
+border-radius :20px;
+box-shadow:0 14px 28px rgba(0,0,0,0.25);
+text-align: center;
+overflow: hidden;
+transition: transform 0.1s ease-in-out;
+}
+.content img:hover {
+  transform: scale(1.08);
+}
+
+h3{
+text-align :center;
+font-size :30px;
+margin:0;
+padding-top: 10px; 
+}
+.gallery{
+display :flex;
+flex-wrap :wrap;
+width :100%;
+align-items :center;
+margin :50 px 0;
+}
+img{
+align-items :center;
+height :50%;
+width :50%;
+}
+
+
+ .cart,.buynow,.close{
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+ font-weight: bold;
+    line-height: 25px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius :8px;
+}
+.cart {
+	background-color: #FF9700;
+}
+
+.buynow {
+	background-color: #FB6423;
+}
+.close {
+	background-color: red;
+}
+
+.about-content{
+  background-color: white;
+    padding: 70px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius:12px;
+    margin: auto;
+    width:60%;
+    margin-top: 150px;
+    text-align: center;
+
+}
+
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .status {
+  color:red;
+  }
+  #new{
+    background-color:tomato;
+  }
+
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    position: relative;
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+  }
+  
+  .popup-content p {
+    margin: 10px 0;
+  }
+  
+  .popup-content button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .popup-content button.cart {
+    background-color: #ffae00;
+  }
+  
+  .popup-content button.buynow {
+    background-color: #00b894;
+  }
+  
+  .popup-content button.close {
+    background-color: #ff5733;
+  }
+  .image{
+    width: 100%;
+    height: 180px;
+  }
+
+
+
+  
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .close {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .password-input {
+    position: relative;
+  }
+  
+  
+  
+  .password-input .fa-eye ,.fa-eye-slash{
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  transform: translateY(-50%);
+font-size: 1.2em;
+  color: #888;
+  cursor: pointer;
+}
+
+
+.popups {
+  width: 350px;
+  height: 30px;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  text-align: center;
+
+}
+
+.popups.show {
+  visibility: visible;
+  text-align: center;
+  opacity: 1;
+}
+
+
+.search-box form {
+  display: flex;
+  align-items: center;
+  margin:auto;
+
+}
+
+.search-box input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  width:100%;
+}
+
+.search-box button[type="submit"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+
+}
+
+#product-data{
+  text-align: center;
+}
+
+
+
+
+
+
+ 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://JAVA.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<welcome-file-list>
+		<welcome-file>HomePage.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>AuthenticationController</servlet-name>
+		<servlet-class>skart.controller.AuthenticationController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthenticationController</servlet-name>
+		<url-pattern>/AuthenticationController</url-pattern>
+
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CartController</servlet-name>
+		<servlet-class>skart.controller.CartController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CartController</servlet-name>
+		<url-pattern>/CartController</url-pattern>
+	</servlet-mapping>
+	  <servlet>
+	<servlet-name>OrderController</servlet-name>
+	<servlet-class>skart.controller.OrderController</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>OrderController</servlet-name>
+		<url-pattern>/OrderController</url-pattern>
+	</servlet-mapping>
+	 <servlet>
+	<servlet-name>ProductController</servlet-name>
+	<servlet-class>skart.controller.ProductController</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>ProductController</servlet-name>
+		<url-pattern>/ProductController</url-pattern>
+	</servlet-mapping>
+	 <servlet>
+	<servlet-name>UserController</servlet-name>
+	<servlet-class>skart.controller.UserController</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>UserController</servlet-name>
+		<url-pattern>/UserController</url-pattern>
+	</servlet-mapping>
+		 <servlet>
+	<servlet-name>VendorsController</servlet-name>
+	<servlet-class>skart.controller.VendorsController</servlet-class>
+	  <multipart-config>
+        <max-file-size>10000000</max-file-size>
+        <max-request-size>10000000</max-request-size>
+    </multipart-config>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>VendorsController</servlet-name>
+		<url-pattern>/VendorsController</url-pattern>
+	</servlet-mapping>
+	 <servlet>
+	<servlet-name>ChangePasswordController</servlet-name>
+	<servlet-class>skart.controller.ChangePasswordController</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>ChangePasswordController</servlet-name>
+		<url-pattern>/ChangePasswordController</url-pattern>
+	</servlet-mapping>
+	 <servlet>
+	<servlet-name>OrderByCartController</servlet-name>
+	<servlet-class>skart.controller.OrderByCartController</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>OrderByCartController</servlet-name>
+		<url-pattern>/OrderByCartController</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+	<servlet-name>VendorProductController</servlet-name>
+	<servlet-class>skart.controller.VendorProductController</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>VendorProductController</servlet-name>
+		<url-pattern>/VendorProductController</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

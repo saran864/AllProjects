@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title >Login</title>
+<link  rel="icon"  type="image/x-icon" href="https://d3bql97l1ytoxn.cloudfront.net/app_resources/239987/overview/img6625352254397070901.png">
+
+<style>
+  body {
+        background-color: #0099ff;	
+        font-family: Arial, sans-serif;
+      }
+
+      .signup-form {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 30%;
+        margin: auto;
+        margin-top: 100px;
+        text-align: center;
+      }
+
+      .signup-form h2 {
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .form-control {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 16px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .btn {
+        background-color: dodgerblue;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+      }
+      img.avatar {
+    width: 30%;
+    border-radius: 50%;
+    }
+
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .status {
+      color:red;
+      }
+</style>
+</head>
+<script>
+function myFunction() {
+  var x = document.getElementById("pwd");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+function loginCheck() {
+	  const form = document.getElementById("myForm");
+		form.addEventListener("submit", function(event){
+		  event.preventDefault();
+
+	var uname = document.getElementById("uname").value;
+	var pwd = document.getElementById("pwd").value;
+        var xhr= new XMLHttpRequest();
+        var data="username="+uname+"&password="+pwd+"&role=user";
+	    xhr.open("GET", "/EcommerseWebsite/AuthenticationController?"+data, true);
+	    xhr.onreadystatechange = function() {
+	    	
+	    	
+			var response = JSON.parse(this.responseText);
+            console.log(response.status);
+            console.log(response.message);
+            if(response.status==="Success")
+            	{
+           	 document.getElementById("check").style.color = "green";
+           	document.getElementById("check").innerHTML="Login Successfully";
+           	
+            	}
+            	
+            else
+            	{
+            	document.getElementById("check").innerHTML="Wrong Username or Password";
+            	 document.getElementById("check").style.color = "red";
+            		
+            	
+            	} 
+             
+	    }
+	    
+	    xhr.send();
+		});
+	  }
+
+</script>
+<body style="text-align: center;">	
+
+<div class="signup-form">
+        <h2>Login</h2>
+        <form id="myForm" >
+          <img src="https://p.kindpng.com/picc/s/78-785904_block-chamber-of-commerce-avatar-white-avatar-icon.png"
+          alt="Avatar" class="avatar"> <br>
+                  <input type="email" id="uname" class="form-control" placeholder="Email" required >
+                  <input type="password" id="pwd" class="form-control" placeholder="Password"  required>
+          <button  id="button" onclick="loginCheck()" class="btn">Verify</button>
+          <p id="check"><p>
+           <br>  <input type="checkbox" onclick="myFunction()" >Show Password<br>
+             <a href="ForgetPassword.html" >Forget Password</a><br>
+                <a href="VendorLogin.html" >Vendor Login</a><br>
+                <a href="AdminLogin.html" >Admin Login</a>
+        </form>
+  </div>
+  
+		
+
+</body>
+</html>

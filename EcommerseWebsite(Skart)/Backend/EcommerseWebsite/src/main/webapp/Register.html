@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Signup</title>
+    <style>
+        .signup-form {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 30%;
+        margin: auto;
+        margin-top: 100px;
+        text-align: center;
+      }
+
+      .signup-form h2 {
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .form-control {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 16px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .btn {
+        background-color: dodgerblue;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+      }
+      img.avatar {
+    width: 30%;
+    border-radius: 50%;
+    }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+    <script>
+    
+    function signup(){
+      const form = document.getElementById("myForm");
+	form.addEventListener("submit", function(event){
+	  event.preventDefault();
+       
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var address = document.getElementById("address").value;
+        var  data = {
+        		   "name":name,
+        		   "age":age,
+        		   "username":username,
+        		   "password":password,
+        		   "address":address
+        		};
+console.log(data)
+   var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/EcommerseWebsite/UserController",true);
+  
+  xhr.onreadystatechange = function() {
+	      var response = JSON.parse(xhr.responseText);
+	     
+	 if(response.message==="failiure"){
+		 document.getElementById("status").style.color = "red";
+		 document.getElementById("status").innerHTML = "Mail already Registered";
+			
+	 }
+	    if(response.message==="success"){ 
+	     document.getElementById("content").style.color = "green";
+    	 document.getElementById("content").innerHTML = "Proceeding otp..!";
+    	 window.location.replace("/EcommerseWebsite/OtpPage.html?"+response.status); 	   
+}
+  
+  }
+  xhr.send(JSON.stringify(data));
+  
+  });
+    }
+    
+   
+    </script>
+  </head>
+  <body>
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form id="myForm" >
+          <img src="https://p.kindpng.com/picc/s/78-785904_block-chamber-of-commerce-avatar-white-avatar-icon.png"
+          alt="Avatar" class="avatar"> <br>
+                  <input type="text" id="name" class="form-control" placeholder="Name" required>
+                  <input type="text" id="age" class="form-control" placeholder="age" required >
+                  <input type="email" id="username" class="form-control" placeholder="Email" required >
+                  <p id="status"></p>
+                  <input type="password" id="password" class="form-control" placeholder="Password"  required>
+                  <input type="text" id="address" class="form-control" placeholder="Address" required >
+          <button  id="button" onclick="signup()" class="btn">Verify</button>
+           <p id="content"></p>
+        </form>
+  </div>
+   
+  </body>
+  </html>
+  

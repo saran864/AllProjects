@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Verify</title>
+    <style>
+      body {
+        background-color: #0099ff;	
+        font-family: Arial, sans-serif;
+      }
+
+      .signup-form {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        padding: 40px;
+        width: 30%;
+        margin: auto;
+        margin-top: 100px;
+        text-align: center;
+      }
+
+      .signup-form h2 {
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .form-control {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-size: 16px;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .btn {
+        background-color: dodgerblue;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+      }
+      img.avatar {
+    width: 30%;
+    border-radius: 50%;
+    }
+
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2);
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="signup-form">
+        <h2>Verify</h2>
+        <form id="myForm" >
+          <img src="https://p.kindpng.com/picc/s/78-785904_block-chamber-of-commerce-avatar-white-avatar-icon.png"
+          alt="Avatar" class="avatar">
+     <br>
+                  <p id="status"></p>
+                  <input type="text" id="otp" class="form-control" placeholder="Otp" required>
+                  <p id="status"><p>
+          <button onclick="signup()" class="btn">Verify</button>
+         
+        </form>
+      
+        
+  </div>
+    </div>
+  </body>
+  <script>
+
+function signup(){
+        var otp = document.getElementById("otp").value;
+        
+        var data = {
+    
+    "otp":otp
+};
+        
+console.log(data.name)
+const form = document.getElementById("myForm");
+	form.addEventListener("submit", function(event){
+	  event.preventDefault();
+   var xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://localhost:8080/EcommerseWebsite/RegisterController",true);
+  xhr.onreadystatechange = function() {
+			
+					var response = JSON.parse(this.responseText);
+                    console.log(response.status);
+                    console.log(response.message);
+     				
+     				if(response.message==="success")
+     					{
+     					  document.getElementById("status").style.color = "green";
+     					document.getElementById("status").innerHTML = "Otp Verified Successfully...!";
+     					setTimeout(myURL, 2000);
+     					function myURL() { document.location.href = "/EcommerseWebsite/UserHome.html"}
+     					}
+     				
+     				if(response.message==="failiure")
+     					{
+     					  document.getElementById("status").style.color = "red";
+     					document.getElementById("status").innerHTML = "Worng otp...!";
+     					setTimeout(myURL, 2000);
+     					function myURL() { document.location.href = "/EcommerseWebsite/Register.html"}
+     					}
+     				
+     				
+     				
+            }
+		
+  xhr.send(JSON.stringify(data));
+ 
+    });
+   
+	}
+   
+    
+</script>
+</body>
+</html>
